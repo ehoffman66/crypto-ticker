@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    </head>
+
+    <style>
+        body{
+            width: 100%;
+        }
+        .ticker{
+            font-size: 25vw;
+            text-align: center;
+            font-family: 'Bebas Neue', cursive;
+        }
+    </style>
+
+    <body>
+        <div class="ticker" id="ticker">$00,000</div>
+    </body>
+
+<script>
+    async function test (){
+        const response = await fetch('https://api.coinbase.com/v2/prices/spot?currency=USD');
+        const myJson = response.json().then(data => {
+            var data = Array(data);
+            document.getElementById("ticker").innerHTML = "$" + data[0]['data']['amount'].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        })
+    }
+    function startTimer() {
+        timer = setInterval(function() { 
+            test();
+        }, 5000);
+    }
+    test();
+    startTimer();
+</script>
+
+</html>
+
+
