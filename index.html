@@ -19,22 +19,22 @@
         <div class="ticker" id="ticker">$00,000</div>
     </body>
 
-<script>
-    async function test (){
-        const response = await fetch('https://api.coinbase.com/v2/prices/spot?currency=USD');
-        const myJson = response.json().then(data => {
-            var data = Array(data);
-            document.getElementById("ticker").innerHTML = "$" + data[0]['data']['amount'].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-        })
-    }
-    function startTimer() {
-        timer = setInterval(function() { 
-            test();
-        }, 5000);
-    }
-    test();
-    startTimer();
-</script>
+    <script type="text/javascript">
+        async function test (){
+            const response = await fetch('https://api.coinbase.com/v2/prices/spot?currency=USD');
+            const myJson = response.json().then(data => {
+                var data = Array(data);
+                document.getElementById("ticker").innerHTML = "$" + data[0]['data']['amount'].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+            })
+        }
+        function startTimer() {
+            timer = setInterval(function() { 
+                test();
+            }, 5000);
+        }
+        test();
+        startTimer();
+    </script>
 
 </html>
 
