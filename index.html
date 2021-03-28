@@ -2,6 +2,7 @@
     <head>
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
 
     <style>
@@ -54,9 +55,16 @@
             const response = await fetch(url);
             const myJson = response.json().then(data => {
                 var data = Array(data);
+                changePercent = data[0]['data']['changePercent24Hr'];
                 var price = parseFloat(data[0]['data']['priceUsd']).toFixed(2);
+                if (changePercent < 0){
+                    var change = " <div style='color:red' class='fa fa-arrow-circle-down'></div> ";
+                }
+                else{
+                    var change = " <div style='color:green' class='fa fa-arrow-circle-up'></div> ";
+                }
                 document.getElementById("ticker").innerHTML = "$" + price.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-                document.getElementById("asset").innerHTML = asset;
+                document.getElementById("asset").innerHTML = asset + change + parseFloat(changePercent).toFixed(2) + "%";
             })
         }
         function startTimer() {
