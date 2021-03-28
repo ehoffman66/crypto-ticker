@@ -18,28 +18,52 @@
             text-align: center;
             font-family: 'Bebas Neue', cursive;
         }
+        .buttonHolder{
+            text-align: center;
+            font-family: 'Bebas Neue', cursive;
+        }
+        .button{
+            color: white;
+            padding: 14px 25px;
+            text-align: center;
+            text-decoration: none;
+            background-color: #f44336;
+        }
     </style>
 
     <body>
-        <div class="ticker" id="ticker">$00,000</div>
-        <div class="asset" id="asset">Bitcoin</div>
+        <div class="ticker" id="ticker"></div>
+        <div class="asset" id="asset"></div>
+        <div class="buttonHolder">
+            <a class="button" title="Bitcoin" onclick="changeAsset('bitcoin')" href="#">Bitcoin</a>
+            <a class="button" title="Ethereum" onclick="changeAsset('ethereum')" href="#">Ethereum</a>
+            <a class="button" title="Dogecoin" onclick="changeAsset('dogecoin')" href="#">Dogecoin</a>
+        </div>
     </body>
 
     <script type="text/javascript">
-        async function getPrice (){
-            const response = await fetch('https://api.coincap.io/v2/assets/bitcoin');
+        var asset = "bitcoin"
+        function changeAsset(newAsset){
+            asset = newAsset;
+            getPrice(asset);
+            console.log(asset);
+        }
+        async function getPrice (asset){
+            url = 'https://api.coincap.io/v2/assets/' + asset;
+            const response = await fetch(url);
             const myJson = response.json().then(data => {
                 var data = Array(data);
                 var price = parseFloat(data[0]['data']['priceUsd']).toFixed(2);
                 document.getElementById("ticker").innerHTML = "$" + price.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                document.getElementById("asset").innerHTML = asset;
             })
         }
         function startTimer() {
             timer = setInterval(function() { 
-                getPrice();
+                getPrice(asset);
             }, 5000);
         }
-        getPrice();
+        getPrice(asset);
         startTimer();
     </script>
 
