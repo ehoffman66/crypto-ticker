@@ -21,10 +21,12 @@
 
     <script type="text/javascript">
         async function getPrice (){
-            const response = await fetch('https://api.coinbase.com/v2/prices/spot?currency=USD');
+            const response = await fetch('https://api.coincap.io/v2/assets');
             const myJson = response.json().then(data => {
                 var data = Array(data);
-                document.getElementById("ticker").innerHTML = "$" + data[0]['data']['amount'].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                console.log(data);
+                var price = parseFloat(data[0]['data'][0]['priceUsd']).toFixed(2);
+                document.getElementById("ticker").innerHTML = "$" + price.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
             })
         }
         function startTimer() {
