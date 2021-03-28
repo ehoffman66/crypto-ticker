@@ -21,11 +21,10 @@
 
     <script type="text/javascript">
         async function getPrice (){
-            const response = await fetch('https://api.coincap.io/v2/assets');
+            const response = await fetch('https://api.coincap.io/v2/assets/bitcoin');
             const myJson = response.json().then(data => {
                 var data = Array(data);
-                console.log(data);
-                var price = parseFloat(data[0]['data'][0]['priceUsd']).toFixed(2);
+                var price = parseFloat(data[0]['data']['priceUsd']).toFixed(2);
                 document.getElementById("ticker").innerHTML = "$" + price.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
             })
         }
