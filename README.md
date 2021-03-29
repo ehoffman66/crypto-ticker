@@ -1,7 +1,7 @@
 # Crypto Ticker
 A crypto ticker made for Raspberry Pi.  
 
-Powered by CoinDesk [CoinDesk](https://www.coindesk.com/price/bitcoin)
+API is from CoinCap [CoinCap](https://docs.coincap.io/)
 
 ![MainScreen](https://user-images.githubusercontent.com/5633084/112772770-a48c7400-9000-11eb-8a7c-4c30f0ed04f8.png)
 
