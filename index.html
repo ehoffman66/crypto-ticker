@@ -5,51 +5,18 @@
         <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link href="./css/main.css" type="text/css" rel="stylesheet">
+        <script type="text/javascript" src="./js/main.js"> </script>
     </head>
 
     <body>
         <div class="ticker" id="ticker"></div>
         <div class="asset" id="asset"></div>
         <div class="buttonHolder">
-            <a class="button" title="Bitcoin" onclick="changeAsset('bitcoin')" href="#">Bitcoin</a>
+            <a class="button" title="Bitcoin" onclick="changeAsset('bitcoin')"   href="#">Bitcoin</a>
             <a class="button" title="Ethereum" onclick="changeAsset('ethereum')" href="#">Ethereum</a>
             <a class="button" title="Dogecoin" onclick="changeAsset('dogecoin')" href="#">Dogecoin</a>
         </div>
     </body>
-
-    <script type="text/javascript"> 
-        var asset = "bitcoin"
-        function changeAsset(newAsset){
-            asset = newAsset;
-            getPrice(asset);
-            console.log(asset);
-        }
-        async function getPrice (asset){
-            url = 'https://api.coincap.io/v2/assets/' + asset;
-            const response = await fetch(url);
-            const myJson = response.json().then(data => {
-                var data = Array(data);
-                changePercent = data[0]['data']['changePercent24Hr'];
-                var price = parseFloat(data[0]['data']['priceUsd']).toFixed(2);
-                if (changePercent < 0){
-                    var change = " <div style='color:red' class='fa fa-arrow-circle-down'> <span class='asset'>" + parseFloat(changePercent).toFixed(2) + "%" + "</span></div>";
-                }
-                else{
-                    var change = " <div style='color:green' class='fa fa-arrow-circle-up'> <span class='asset'>" + parseFloat(changePercent).toFixed(2) + "%" + "</span></div>";
-                }
-                document.getElementById("ticker").innerHTML = "$" + price.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-                document.getElementById("asset").innerHTML = asset + change;
-            })
-        }
-        function startTimer() {
-            timer = setInterval(function() { 
-                getPrice(asset);
-            }, 5000);
-        }
-        getPrice(asset);
-        startTimer();
-    </script>
-
 </html>
 
 
