@@ -1,0 +1,28 @@
+body{
+    width: 95vw;
+}
+.ticker{
+    font-size: 23vw;
+    text-align: center;
+    font-family: 'Bebas Neue', cursive;
+}
+.asset{
+    font-size: 13vw;
+    text-align: center;
+    font-family: 'Bebas Neue', cursive;
+}
+.buttonHolder{
+    text-align: center;
+    font-family: 'Bebas Neue', cursive;
+}
+.button{
+    color: white;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    background-color: #f44336;
+    font-size: 6vw;
+    margin: 10px;
+    width: 500px;
+    height: 140px;
+}
