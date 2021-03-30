@@ -8,7 +8,7 @@
 
     <style>
         body{
-            width: 100vw;
+            width: 95vw;
         }
         .ticker{
             font-size: 23vw;
@@ -16,7 +16,7 @@
             font-family: 'Bebas Neue', cursive;
         }
         .asset{
-            font-size: 15vw;
+            font-size: 13vw;
             text-align: center;
             font-family: 'Bebas Neue', cursive;
         }
@@ -30,7 +30,10 @@
             text-align: center;
             text-decoration: none;
             background-color: #f44336;
+            font-size: 6vw;
             margin: 10px;
+            width: 500px;
+            height: 140px;
         }
     </style>
 
@@ -59,13 +62,13 @@
                 changePercent = data[0]['data']['changePercent24Hr'];
                 var price = parseFloat(data[0]['data']['priceUsd']).toFixed(2);
                 if (changePercent < 0){
-                    var change = " <div style='color:red' class='fa fa-arrow-circle-down'></div> ";
+                    var change = " <div style='color:red' class='fa fa-arrow-circle-down'> <span class='asset'>" + parseFloat(changePercent).toFixed(2) + "%" + "</span></div>";
                 }
                 else{
-                    var change = " <div style='color:green' class='fa fa-arrow-circle-up'></div> ";
+                    var change = " <div style='color:green' class='fa fa-arrow-circle-up'> <span class='asset'>" + parseFloat(changePercent).toFixed(2) + "%" + "</span></div>";
                 }
                 document.getElementById("ticker").innerHTML = "$" + price.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-                document.getElementById("asset").innerHTML = asset + change + parseFloat(changePercent).toFixed(2) + "%";
+                document.getElementById("asset").innerHTML = asset + change;
             })
         }
         function startTimer() {
