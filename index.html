@@ -11,13 +11,20 @@
     </head>
 
     <body>
+        <label class="switch">
+            <input type="checkbox" id="checkbox" onclick="darkMode()">
+            <span class="slider round"></span>
+        </label>
+
         <div class="ticker" id="ticker"></div>
         <div class="asset" id="asset"></div>
+
         <div class="buttonHolder">
             <a class="button" title="Bitcoin" onclick="changeAsset('bitcoin')"   href="#">Bitcoin</a>
             <a class="button" title="Ethereum" onclick="changeAsset('ethereum')" href="#">Ethereum</a>
             <a class="button" title="Dogecoin" onclick="changeAsset('dogecoin')" href="#">Dogecoin</a>
         </div>
+
     </body>
 </html>
 
