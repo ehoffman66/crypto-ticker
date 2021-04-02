@@ -1,16 +1,15 @@
 var asset = "bitcoin"
-function changeAsset(newAsset){
+function changeAsset(newAsset,decPlace){
     asset = newAsset;
-    getPrice(asset);
-    console.log(asset);
+    getPrice(asset,decPlace);
 }
-async function getPrice (asset){
+async function getPrice (asset, decPlace){
     url = 'https://api.coincap.io/v2/assets/' + asset;
     const response = await fetch(url);
     const myJson = response.json().then(data => {
         var data = Array(data);
         changePercent = data[0]['data']['changePercent24Hr'];
-        var price = parseFloat(data[0]['data']['priceUsd']).toFixed(2);
+        var price = parseFloat(data[0]['data']['priceUsd']).toFixed(decPlace);
         if (changePercent < 0){
             var change = " <div style='color:red' class='fa fa-arrow-circle-down'> <span class='asset'>" + parseFloat(changePercent).toFixed(2) + "%" + "</span></div>";
         }
@@ -22,8 +21,12 @@ async function getPrice (asset){
     })
 }
 function startTimer() {
-    timer = setInterval(function() { 
-        getPrice(asset);
+    timer = setInterval(function() {
+        if (asset == 'dogecoin')
+            decPlace = 3;
+        else
+            decPlace = 2;  
+        getPrice(asset,decPlace);
     }, 5000);
 }
 
@@ -41,5 +44,5 @@ function darkMode (){
     }
 }
 
-getPrice(asset);
+getPrice(asset,2);
 startTimer();
