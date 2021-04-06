@@ -29,5 +29,20 @@ function startTimer() {
         getPrice(asset,decPlace);
     }, 5000);
 }
+
+function darkMode (){
+    var checkBox = document.getElementById("checkbox");
+    if (checkBox.checked == true){
+        document.body.style.backgroundColor = "black";
+        document.getElementById("ticker").style.color = "white";
+        document.getElementById("asset").style.color = "white";
+    }
+    else{
+        document.body.style.backgroundColor = "white"; 
+        document.getElementById("ticker").style.color = "black";
+        document.getElementById("asset").style.color = "black";
+    }
+}
+
 getPrice(asset,2);
 startTimer();
