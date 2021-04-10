@@ -12,7 +12,7 @@ API is from [CoinCap](https://docs.coincap.io/)
 
 I reccommend running this page on a Pi 3 or 4.
 
-##Usage
+## Usage
 
 
 ## Upcoming Features 
