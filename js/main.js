@@ -26,7 +26,7 @@ async function getPrice (asset, decPlace){
 function startTimer() {
     timer = setInterval(function() {
         if (asset == 'dogecoin')
-            decPlace = 4;
+            decPlace = 3;
         else
             decPlace = 2;  
         getPrice(asset,decPlace);
