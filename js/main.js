@@ -1,8 +1,10 @@
+
 var asset = "bitcoin"
 function changeAsset(newAsset,decPlace){
     asset = newAsset;
     getPrice(asset,decPlace);
 }
+
 async function getPrice (asset, decPlace){
     url = 'https://api.coincap.io/v2/assets/' + asset;
     const response = await fetch(url);
@@ -20,10 +22,11 @@ async function getPrice (asset, decPlace){
         document.getElementById("asset").innerHTML = asset + change;
     })
 }
+
 function startTimer() {
     timer = setInterval(function() {
         if (asset == 'dogecoin')
-            decPlace = 3;
+            decPlace = 4;
         else
             decPlace = 2;  
         getPrice(asset,decPlace);
