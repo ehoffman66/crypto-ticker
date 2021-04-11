@@ -14,10 +14,12 @@ async function getPrice (asset, decPlace){
         changePercent = data[0]['data']['changePercent24Hr'];
         var price = parseFloat(data[0]['data']['priceUsd']).toFixed(decPlace);
         if (changePercent < 0){
-            var change = " <div style='color:red' class='fa fa-arrow-circle-down'> <span class='asset'>" + parseFloat(changePercent).toFixed(2) + "%" + "</span></div>";
+            var change = " <div style='color:red' class='fa fa-arrow-circle-down'> <span class='asset'>" + 
+                        parseFloat(changePercent).toFixed(2) + "%" + "</span></div>";
         }
         else{
-            var change = " <div style='color:green' class='fa fa-arrow-circle-up'> <span class='asset'>" + parseFloat(changePercent).toFixed(2) + "%" + "</span></div>";
+            var change = " <div style='color:green' class='fa fa-arrow-circle-up'> <span class='asset'>" + 
+                        parseFloat(changePercent).toFixed(2) + "%" + "</span></div>";
         }
         document.getElementById("ticker").innerHTML = "$" + price.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
         document.getElementById("asset").innerHTML = asset + change;
