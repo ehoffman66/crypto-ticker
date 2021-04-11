@@ -1,5 +1,10 @@
 
-var asset = "bitcoin"
+/**
+ * When a user clicks a button this function will be called to change
+ * the shown asset
+ * @param  {character} newAsset Crypto name to show on the screen
+ * @param  {integer}   decPlace Number of decimal places to show
+ */
 function changeAsset(newAsset,decPlace){
     asset = newAsset;
     getPrice(asset,decPlace);
@@ -47,5 +52,6 @@ function darkMode (){
     }
 }
 
+var asset = "bitcoin"
 getPrice(asset,2);
 startTimer();
