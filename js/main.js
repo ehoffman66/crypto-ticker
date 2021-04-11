@@ -1,15 +1,11 @@
 
 /**
- * When a user clicks a button this function will be called to change
- * the shown asset
+ * When a user clicks a button this function will be called to get and
+ * display the most recent price. This function is also used when a user
+ * clicks to change the displayed crypto
  * @param  {character} newAsset Crypto name to show on the screen
  * @param  {integer}   decPlace Number of decimal places to show
  */
-function changeAsset(newAsset,decPlace){
-    asset = newAsset;
-    getPrice(asset,decPlace);
-}
-
 async function getPrice (asset, decPlace){
     url = 'https://api.coincap.io/v2/assets/' + asset;
     const response = await fetch(url);
