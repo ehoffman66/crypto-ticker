@@ -24,6 +24,10 @@ async function getPrice (asset, decPlace){
     })
 }
 
+/**
+ * This function uses Set interval to call getPrice function every
+ * 5 seconds.
+ */
 function startTimer() {
     timer = setInterval(function() {
         if (asset == 'dogecoin')
