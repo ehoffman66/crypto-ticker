@@ -59,6 +59,10 @@ function darkMode (){
     }
 }
 
+/**
+ * This function gets the current time
+ * @return character dateTime Current time
+ */
 function getDateTime (){
     var d = new Date();
     dateTime = d.getHours() + ":" + (d.getMinutes()<10?'0':'') + d.getMinutes()+ ":" + d.getSeconds();
