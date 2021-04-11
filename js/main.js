@@ -23,6 +23,7 @@ async function getPrice (asset, decPlace){
         }
         document.getElementById("ticker").innerHTML = "$" + price.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
         document.getElementById("asset").innerHTML = asset + change;
+        document.getElementById("date").innerHTML = "Last Updated: " + getDateTime();
     })
 }
 
@@ -56,6 +57,12 @@ function darkMode (){
         document.getElementById("ticker").style.color = "black";
         document.getElementById("asset").style.color = "black";
     }
+}
+
+function getDateTime (){
+    var d = new Date();
+    dateTime = d.getHours() + ":" + (d.getMinutes()<10?'0':'') + d.getMinutes()+ ":" + d.getSeconds();
+    return dateTime;
 }
 
 var asset = "bitcoin"
