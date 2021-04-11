@@ -38,6 +38,10 @@ function startTimer() {
     }, 5000);
 }
 
+/**
+ * This function checks to see if the toggle for Dark Mode is checked or
+ * unchecked and changes the ticker and asset styling
+ */
 function darkMode (){
     var checkBox = document.getElementById("checkbox");
     if (checkBox.checked == true){
