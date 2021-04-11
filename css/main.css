@@ -11,7 +11,13 @@ body{
     text-align: center;
     font-family: 'Bebas Neue', cursive;
 }
+.date{
+    font-size: 2vw;
+    text-align: center;
+    font-family: 'Bebas Neue', cursive;
+}
 .buttonHolder{
+    padding-top: 30px;
     text-align: center;
     font-family: 'Bebas Neue', cursive;
 }
