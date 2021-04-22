@@ -25,6 +25,9 @@ async function getPrice (asset, decPlace){
         document.getElementById("asset").innerHTML = asset + change;
         document.getElementById("date").innerHTML = "Last Updated: " + getDateTime();
     })
+    if (count === 0){
+        setMode();
+    }
 }
 
 /**
@@ -38,6 +41,8 @@ function startTimer() {
         else
             decPlace = 2;  
         getPrice(asset,decPlace);
+        count = count+1;
+        console.log(count);
     }, 5000);
 }
 
@@ -47,15 +52,17 @@ function startTimer() {
  */
 function darkMode (){
     var checkBox = document.getElementById("checkbox");
-    if (checkBox.checked == true){
+    if (checkBox.checked === true){
         document.body.style.backgroundColor = "black";
         document.getElementById("ticker").style.color = "white";
         document.getElementById("asset").style.color = "white";
+        localStorage['darkMode'] = true;
     }
     else{
         document.body.style.backgroundColor = "white"; 
         document.getElementById("ticker").style.color = "black";
         document.getElementById("asset").style.color = "black";
+        localStorage['darkMode'] = false;
     }
 }
 
@@ -69,6 +76,22 @@ function getDateTime (){
     return dateTime;
 }
 
+function setMode(){
+    var checkBox     = document.getElementById("checkbox");
+    if (localStorage['darkMode'] == "true"){
+        checkBox.checked = true;
+        document.body.style.backgroundColor = "black";
+        document.getElementById("ticker").style.color = "white";
+        document.getElementById("asset").style.color = "white";
+    }
+    else{
+        checkBox.checked = false;
+        document.body.style.backgroundColor = "white"; 
+        document.getElementById("ticker").style.color = "black";
+    }
+}
+
+var count = 0;
 var asset = "bitcoin"
 getPrice(asset,2);
 startTimer();
