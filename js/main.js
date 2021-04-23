@@ -56,12 +56,14 @@ function darkMode (){
         document.body.style.backgroundColor = "black";
         document.getElementById("ticker").style.color = "white";
         document.getElementById("asset").style.color = "white";
+        document.getElementById("date").style.color = "white";
         localStorage['darkMode'] = true;
     }
     else{
         document.body.style.backgroundColor = "white"; 
         document.getElementById("ticker").style.color = "black";
         document.getElementById("asset").style.color = "black";
+        document.getElementById("date").style.color = "black";
         localStorage['darkMode'] = false;
     }
 }
@@ -83,11 +85,14 @@ function setMode(){
         document.body.style.backgroundColor = "black";
         document.getElementById("ticker").style.color = "white";
         document.getElementById("asset").style.color = "white";
+        document.getElementById("date").style.color = "white";
     }
     else{
         checkBox.checked = false;
         document.body.style.backgroundColor = "white"; 
         document.getElementById("ticker").style.color = "black";
+        document.getElementById("asset").style.color = "black";
+        document.getElementById("date").style.color = "black";
     }
 }
 
