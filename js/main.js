@@ -43,7 +43,6 @@ function startTimer() {
             decPlace = 2;  
         getPrice(asset,decPlace);
         count = count+1;
-        console.log(count);
     }, 5000);
 }
 
