@@ -6,7 +6,8 @@
  * @param  {character} newAsset Crypto name to show on the screen
  * @param  {integer}   decPlace Number of decimal places to show
  */
-async function getPrice (asset, decPlace){
+async function getPrice (crypto, decPlace){
+    asset = crypto;
     url = 'https://api.coincap.io/v2/assets/' + asset;
     const response = await fetch(url);
     const myJson = response.json().then(data => {
