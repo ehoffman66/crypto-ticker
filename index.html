@@ -11,10 +11,21 @@
     </head>
 
     <body>
+        <div id="myNav" class="overlay">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <div class="overlay-content">
+                <h2>Settings Pannel</h2>
+            </div>
+        </div>
+
         <label class="switch">
             <input type="checkbox" id="checkbox" onclick="darkMode()">
             <span class="slider round"></span>
         </label>
+
+        <div id="main">
+            <button class="openbtn" onclick="openNav()">☰</button>  
+        </div>
 
         <div class="ticker" id="ticker"></div>
         <div class="asset" id="asset"></div>

@@ -1,10 +1,10 @@
 body{
     width: 95vw;
+    text-align: center;
+    font-family: 'Bebas Neue', cursive;
 }
 .ticker{
     font-size: 23vw;
-    text-align: center;
-    font-family: 'Bebas Neue', cursive;
 }
 .asset{
     font-size: 13vw;
@@ -13,13 +13,9 @@ body{
 }
 .date{
     font-size: 2vw;
-    text-align: center;
-    font-family: 'Bebas Neue', cursive;
 }
 .buttonHolder{
     padding-top: 30px;
-    text-align: center;
-    font-family: 'Bebas Neue', cursive;
 }
 .button{
     color: white;
@@ -32,9 +28,72 @@ body{
     width: 500px;
     height: 140px;
 }
-.switch {
+.openbtn{
+    display:block !important;
+    position:absolute;
+    float:right;
+    right: 0;
+    border: none;
+    background: none;
+    color: #ccc;
+    width: 60px;
+    height: 34px;
+    font-size: 40px;
+}
+.overlay {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0, 0.9);
+    overflow-x: hidden;
+    transition: 0.5s;
+    color:white;
+}
+
+.overlay-content {
     position: relative;
-    display: inline-block;
+    top: 10%;
+    width: 100%;
+    text-align: left;
+    margin-top: 30px;
+    padding-left: 10em;
+}
+  
+.overlay a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.overlay a:hover, .overlay a:focus {
+    color: #f1f1f1;
+}
+
+.overlay .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+}
+
+@media screen and (max-height: 450px) {
+    .overlay a {font-size: 20px}
+    .overlay .closebtn {
+        font-size: 40px;
+        top: 15px;
+        right: 35px;
+    }
+}
+.switch {
+    display:block !important;
+    position:absolute;
     width: 60px;
     height: 34px;
 }
