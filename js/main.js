@@ -96,6 +96,14 @@ function setMode(){
     }
 }
 
+function openNav() {
+    document.getElementById("myNav").style.width = "100%";
+}
+
+function closeNav() {
+    document.getElementById("myNav").style.width = "0%";
+}
+
 var count = 0;
 var asset = "bitcoin"
 getPrice(asset,2);
