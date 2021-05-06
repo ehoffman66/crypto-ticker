@@ -1,10 +1,10 @@
 body{
     width: 95vw;
+    text-align: center;
+    font-family: 'Bebas Neue', cursive;
 }
 .ticker{
     font-size: 23vw;
-    text-align: center;
-    font-family: 'Bebas Neue', cursive;
 }
 .asset{
     font-size: 13vw;
@@ -13,13 +13,9 @@ body{
 }
 .date{
     font-size: 2vw;
-    text-align: center;
-    font-family: 'Bebas Neue', cursive;
 }
 .buttonHolder{
     padding-top: 30px;
-    text-align: center;
-    font-family: 'Bebas Neue', cursive;
 }
 .button{
     color: white;
@@ -55,8 +51,10 @@ body{
     background-color: rgba(0,0,0, 0.9);
     overflow-x: hidden;
     transition: 0.5s;
-    }
-    .overlay-content {
+    color:white;
+}
+
+.overlay-content {
     position: relative;
     top: 10%;
     width: 100%;
