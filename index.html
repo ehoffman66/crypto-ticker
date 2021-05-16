@@ -14,7 +14,43 @@
         <div id="myNav" class="overlay">
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
             <div class="overlay-content">
-                <h2>Settings Pannel</h2>
+                <h1>Settings</h1>
+                <hr>
+                <h3>Weather Settings</h3>
+                </br>
+                <label for="long">Longitude:</label>
+                <input type="text" id="long" name="long"></br>
+                <button id="-" onclick="addLong(this)">-</button>
+                <button id="." onclick="addLong(this)">.</button>
+                <button id="0" onclick="addLong(this)">0</button>
+                <button id="1" onclick="addLong(this)">1</button>
+                <button id="2" onclick="addLong(this)">2</button>
+                <button id="3" onclick="addLong(this)">3</button>
+                <button id="4" onclick="addLong(this)">4</button>
+                <button id="5" onclick="addLong(this)">5</button>
+                <button id="6" onclick="addLong(this)">6</button>
+                <button id="7" onclick="addLong(this)">7</button>
+                <button id="8" onclick="addLong(this)">8</button>
+                <button id="9" onclick="addLong(this)">9</button>
+                <button id="clearLong" onclick="clearValue('long')">X</button>
+                </br>
+                </br>
+                <label for="lat">Latitude:</label>
+                <input type="text" id="lat" name="lat"></br>
+                <button id="-" onclick="addLat(this)">-</button>
+                <button id="." onclick="addLat(this)">.</button>
+                <button id="0" onclick="addLat(this)">0</button>
+                <button id="1" onclick="addLat(this)">1</button>
+                <button id="2" onclick="addLat(this)">2</button>
+                <button id="3" onclick="addLat(this)">3</button>
+                <button id="4" onclick="addLat(this)">4</button>
+                <button id="5" onclick="addLat(this)">5</button>
+                <button id="6" onclick="addLat(this)">6</button>
+                <button id="7" onclick="addLat(this)">7</button>
+                <button id="8" onclick="addLat(this)">8</button>
+                <button id="9" onclick="addLat(this)">9</button>
+                <button id="clearLat" onclick="clearValue('lat')">X</button>
+                </br>
             </div>
         </div>
 
@@ -25,11 +61,11 @@
 
         <div id="main">
             <button class="openbtn" onclick="openNav()">☰</button>  
+            <!-- <div class="test" style="float:right;padding-right:10px;">Weather</div>  -->
         </div>
 
         <div class="ticker" id="ticker"></div>
         <div class="asset" id="asset"></div>
-        <div class="date" id="date"></div>
 
         <div class="buttonHolder">
             <a class="button" title="Bitcoin" onclick="getPrice('bitcoin',2)"   href="#">Bitcoin</a>

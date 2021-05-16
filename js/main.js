@@ -24,7 +24,6 @@ async function getPrice (crypto, decPlace){
         }
         document.getElementById("ticker").innerHTML = "$" + price.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
         document.getElementById("asset").innerHTML = asset + change;
-        document.getElementById("date").innerHTML = "Last Updated: " + getDateTime();
     })
     if (count === 0){
         setMode();
@@ -56,14 +55,12 @@ function darkMode (){
         document.body.style.backgroundColor = "black";
         document.getElementById("ticker").style.color = "white";
         document.getElementById("asset").style.color = "white";
-        document.getElementById("date").style.color = "white";
         localStorage['darkMode'] = true;
     }
     else{
         document.body.style.backgroundColor = "white"; 
         document.getElementById("ticker").style.color = "black";
         document.getElementById("asset").style.color = "black";
-        document.getElementById("date").style.color = "black";
         localStorage['darkMode'] = false;
     }
 }
@@ -79,20 +76,18 @@ function getDateTime (){
 }
 
 function setMode(){
-    var checkBox     = document.getElementById("checkbox");
+    var checkBox = document.getElementById("checkbox");
     if (localStorage['darkMode'] == "true"){
         checkBox.checked = true;
         document.body.style.backgroundColor = "black";
         document.getElementById("ticker").style.color = "white";
         document.getElementById("asset").style.color = "white";
-        document.getElementById("date").style.color = "white";
     }
     else{
         checkBox.checked = false;
         document.body.style.backgroundColor = "white"; 
         document.getElementById("ticker").style.color = "black";
         document.getElementById("asset").style.color = "black";
-        document.getElementById("date").style.color = "black";
     }
 }
 
@@ -102,6 +97,18 @@ function openNav() {
 
 function closeNav() {
     document.getElementById("myNav").style.width = "0%";
+}
+
+function clearValue(input){
+    document.getElementById(input).value = "";
+}
+
+function addLong(data){
+    document.getElementById("long").value = document.getElementById("long").value + data.id;
+}
+
+function addLat(data){
+    document.getElementById("lat").value = document.getElementById("lat").value + data.id;
 }
 
 var count = 0;
