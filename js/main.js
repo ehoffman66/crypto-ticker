@@ -111,6 +111,16 @@ function addLat(data){
     document.getElementById("lat").value = document.getElementById("lat").value + data.id;
 }
 
+function saveSettings(){
+    localStorage['long'] = document.getElementById("long").value;
+    localStorage['lat'] = document.getElementById("lat").value;
+    alert("saved");
+}
+
+function getWeather(){
+
+}
+
 var count = 0;
 var asset = "bitcoin"
 getPrice(asset,2);
