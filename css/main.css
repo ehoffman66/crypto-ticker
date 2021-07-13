@@ -3,6 +3,9 @@ body{
     text-align: center;
     font-family: 'Bebas Neue', cursive;
 }
+input{
+    height: 3.8vh;
+}
 .ticker{
     font-size: 23vw;
 }
