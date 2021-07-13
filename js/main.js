@@ -89,6 +89,10 @@ function setMode(){
         document.getElementById("ticker").style.color = "black";
         document.getElementById("asset").style.color = "black";
     }
+    
+    if (localStorage['zipCode']){
+        document.getElementById("zipCode").value = localStorage['zipCode'];
+    }
 }
 
 function openNav() {
@@ -103,17 +107,12 @@ function clearValue(input){
     document.getElementById(input).value = "";
 }
 
-function addLong(data){
-    document.getElementById("long").value = document.getElementById("long").value + data.id;
-}
-
-function addLat(data){
-    document.getElementById("lat").value = document.getElementById("lat").value + data.id;
+function addZip(data){
+    document.getElementById("zipCode").value = document.getElementById("zipCode").value + data.id;
 }
 
 function saveSettings(){
-    localStorage['long'] = document.getElementById("long").value;
-    localStorage['lat'] = document.getElementById("lat").value;
+    localStorage['zipCode'] = document.getElementById("zipCode").value;
     alert("saved");
 }
 
