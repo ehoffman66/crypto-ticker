@@ -14,48 +14,29 @@
         <div id="myNav" class="overlay">
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
             <div class="overlay-content">
-                <h1>Settings</h1>
+                <div id="overlay-header">Settings</div>
                 <hr style="width:75%;text-align:left;margin-left:0">
-                <h3>Weather</h3>
+                <div id="overlay-subheader">Weather</div>
                 <hr style="width:50%;text-align:left;margin-left:0">
                 </br>
-                <label for="long">Longitude:</label>
-                <input type="text" id="long" name="long"></br>
-                <button id="-" onclick="addLong(this)">-</button>
-                <button id="." onclick="addLong(this)">.</button>
-                <button id="0" onclick="addLong(this)">0</button>
-                <button id="1" onclick="addLong(this)">1</button>
-                <button id="2" onclick="addLong(this)">2</button>
-                <button id="3" onclick="addLong(this)">3</button>
-                <button id="4" onclick="addLong(this)">4</button>
-                <button id="5" onclick="addLong(this)">5</button>
-                <button id="6" onclick="addLong(this)">6</button>
-                <button id="7" onclick="addLong(this)">7</button>
-                <button id="8" onclick="addLong(this)">8</button>
-                <button id="9" onclick="addLong(this)">9</button>
-                <button id="clearLong" onclick="clearValue('long')">X</button>
-                </br>
-                </br>
-                <label for="lat">Latitude:</label>
-                <input type="text" id="lat" name="lat"></br>
-                <button id="-" onclick="addLat(this)">-</button>
-                <button id="." onclick="addLat(this)">.</button>
-                <button id="0" onclick="addLat(this)">0</button>
-                <button id="1" onclick="addLat(this)">1</button>
-                <button id="2" onclick="addLat(this)">2</button>
-                <button id="3" onclick="addLat(this)">3</button>
-                <button id="4" onclick="addLat(this)">4</button>
-                <button id="5" onclick="addLat(this)">5</button>
-                <button id="6" onclick="addLat(this)">6</button>
-                <button id="7" onclick="addLat(this)">7</button>
-                <button id="8" onclick="addLat(this)">8</button>
-                <button id="9" onclick="addLat(this)">9</button>
-                <button id="clearLat" onclick="clearValue('lat')">X</button>
+                <label id="overlay-input-text" for="long">Zipcode:</label>
+                <input id="overlay-input-text" type="text" id="long" name="long"></br>
+                <button id="0" class="overlay-button" onclick="addLong(this)">0</button>
+                <button id="1" class="overlay-button" onclick="addLong(this)">1</button>
+                <button id="2" class="overlay-button" onclick="addLong(this)">2</button>
+                <button id="3" class="overlay-button" onclick="addLong(this)">3</button>
+                <button id="4" class="overlay-button" onclick="addLong(this)">4</button>
+                <button id="5" class="overlay-button" onclick="addLong(this)">5</button>
+                <button id="6" class="overlay-button" onclick="addLong(this)">6</button>
+                <button id="7" class="overlay-button" onclick="addLong(this)">7</button>
+                <button id="8" class="overlay-button" onclick="addLong(this)">8</button>
+                <button id="9" class="overlay-button" onclick="addLong(this)">9</button>
+                <button id="clearLong" class="overlay-button" onclick="clearValue('long')">X</button>
                 </br>
                 </br>
                 <hr style="width:50%;text-align:left;margin-left:0">
                 <div id="save-btn">
-                <button onclick="saveSettings()">SAVE</button>
+                <button onclick="saveSettings()" class="overlay-button">SAVE</button>
                 </div>
             </div>
         </div>
