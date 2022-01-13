@@ -75,6 +75,10 @@ function getDateTime (){
     return dateTime;
 }
 
+/**
+ * This function checks localStorage and gets the users perferences 
+ * for darkmode.
+ */
 function setMode(){
     var checkBox = document.getElementById("checkbox");
     if (localStorage['darkMode'] == "true"){
